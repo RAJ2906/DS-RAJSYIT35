@@ -1,0 +1,77 @@
+class Node:
+         def _init_(self,data,Next=None,Previous=None):
+             self.data=data
+             self.next=Next
+             self.previous=Previous 
+           
+       def getNext(self):
+             return self.next
+
+       def getPrevious(self):
+             return self.Previous
+
+       def getData(self):
+             return self.data
+
+       def setData(self,newData):
+             self.data=newData
+
+       def setNext(self,newNext):
+             self.next=newNext
+
+        def setPrevious(self,newPrevious):
+             self.previous=newPrevious
+
+class DoublyLinkedList:
+         def _init_(self):
+               self.head=None
+
+         def isEmpty(self):
+              return self.head==None
+
+        def insertFirst(self,data):
+              newNode=Node(data)
+              self.head.setPrevious(newNode)
+newNode.next=self.head
+self.head=newNode
+          def insertLast(self,data):
+                        newNode=Node(data)
+pointer=self.head
+while pointer.getNext()!=None:
+         pointer=pointer.getNext()
+pointer.setNext(newNode)
+newNode.setPrevious(pointer)
+
+         def getAllData(self):
+              pointer=self.head
+              items=[]
+              while pointer:
+        items.append(pointer.getData())
+             pointer=pointer.getNext()
+        return items
+
+      def remove(self,head):
+            pointer=self.head 
+            previous=None
+            found=False
+            while not found:
+                if pointer.getData()==item:
+              found=True
+         else:
+               previous=pointer
+               pointer=pointer.getNext()
+
+     if   previous==None:
+          self.head=pointer.getNext()
+
+    else:
+          previous setNext(current.getNext())
+
+myList=DoublyLinkedList()
+myList.insertFirst(1)
+myList.insertFirst(10)
+myList.insertFirst(20)
+myList.insertFirst(30)
+myList.insertFirst(40)
+myList.remove(10)
+print(myList.getAllData())
