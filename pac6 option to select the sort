@@ -1,6 +1,6 @@
 class Sorting:
     
-    def _init_(self,lst):
+    def __init__(self,lst):
         self.lst = lst
         
     def bubble_sort(self,lst):
@@ -47,6 +47,6 @@ class Sorting:
                 print(sort.insertion_sort(self.lst))
             else:
                 break
-lst = [4,2,3,9,21,32,70,12,1] 
+lst = [12,4,2,43,53,2,5,98,57,87,12] 
 sort = Sorting(lst)
 sort.run_sort()
